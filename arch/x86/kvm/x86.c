@@ -4576,6 +4576,8 @@ long kvm_arch_vm_ioctl(struct file *filp,
 		       unsigned int ioctl, unsigned long arg)
 {
 	// where qemu's kvm_vm_ioctl will reach
+	// now, its time to call sgx enclave onMigration
+	// guest io thread should return back to user
 
 	struct kvm *kvm = filp->private_data;
 	void __user *argp = (void __user *)arg;
