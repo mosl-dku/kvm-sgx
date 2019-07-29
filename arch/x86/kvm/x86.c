@@ -4228,6 +4228,12 @@ long kvm_arch_vcpu_ioctl(struct file *filp,
 		r = 0;
 		break;
 	}
+    case KVM_EPC_STOP:
+    {
+            printk("kvm_epc_stop\n");
+            break;
+    }
+
 	default:
 		r = -EINVAL;
 	}
